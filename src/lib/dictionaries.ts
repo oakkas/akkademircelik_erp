@@ -540,6 +540,8 @@ export const dictionary = {
             viewInvoices: "Faturaları Görüntüle",
             collectedFromSales: "Ödenmiş satış faturalarından tahsil edilen",
             waitingForPayment: "Ödeme bekleyen faturalar",
+            totalExpenses: "Masraflar",
+            paidExpenses: "Toplam ödenen masraflar",
             overdueAmount: "Gecikmiş Tutar",
             totalUnpaid: "Vadesi geçmiş toplam ödenmemiş tutar",
         },
