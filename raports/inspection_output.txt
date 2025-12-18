@@ -1,0 +1,126 @@
+Found 13 Excel files.
+
+==================================================
+Inspecting: Akka kasım HesapHareketleri_02.12.2025_0061615 (1).xlsx
+==================================================
+Columns: ['Vadesiz Hesap Hareketleriniz', 'Unnamed: 1']
+
+First 3 rows:
+  Vadesiz Hesap Hareketleriniz                          Unnamed: 1
+0               Ad Soyad/Ünvan  AKKA DMR.ÇELİK SAN.VE TİC.LTD.ŞTİ.
+1                         Şube                        ERTUĞRULKENT
+2                     Hesap No                        1179-0061615
+
+==================================================
+Inspecting: Kuveyt Hesap Hareketleri (5).xls
+==================================================
+ERROR reading Kuveyt Hesap Hareketleri (5).xls: Unsupported format, or corrupt file: Expected BOF record; found b'\xef\xbb\xbf<tabl'
+
+==================================================
+Inspecting: Masraf durum raporu.xls
+==================================================
+Columns: ['Hesap kodu', 'Hesap adı', 'TL Borç']
+
+First 3 rows:
+   Hesap kodu                  Hesap adı    TL Borç
+0    602.0010  KAYNAK İŞÇİLİĞİ GELİRLERİ       0.00
+1    770.0010          NAKLİYE GİDERLERİ  338021.91
+2    770.0015      FİYAT FARKI GİDERLERİ   37140.26
+
+==================================================
+Inspecting: Vade durum raporu.xls
+==================================================
+Columns: ['Cari hesap kodu', 'Cari hesap adı', 'Döviz', 'Vadesi geçen bakiye', 'Valör']
+
+First 3 rows:
+  Cari hesap kodu                                                     Cari hesap adı Döviz  Vadesi geçen bakiye  Valör
+0      120.A.0003                      ALİŞ MAKİNA SANAYİ VE TİCARET LİMİTED ŞİRKETİ    TL               216.96    182
+1      120.A.0005   ANLAŞKALIP MAKİNA-OTOMOTİV YAN SANAYİ VE TİCARET LİMİTED ŞİRKETİ    TL             65951.12      5
+2      120.E.0006  E.D.C. MAKİNA METAL MÜHENDİSLİK SANAYİ VE TİCARET LİMİTED ŞİRKETİ    TL             69384.80     67
+
+==================================================
+Inspecting: Cari bakiye durum raporu.xls
+==================================================
+Columns: ['Cari hesap adı', 'TL Borç', 'TL Alacak', 'TL Borç Bakiye', 'Orj. döviz']
+
+First 3 rows:
+                                                     Cari hesap adı     TL Borç   TL Alacak  TL Borç Bakiye Orj. döviz
+0                     ALİŞ MAKİNA SANAYİ VE TİCARET LİMİTED ŞİRKETİ     5199.58     4982.62          216.96         TL
+1  ANLAŞKALIP MAKİNA-OTOMOTİV YAN SANAYİ VE TİCARET LİMİTED ŞİRKETİ  2142584.87  1665953.33       476631.54         TL
+2  C PRES METAL SAC ŞEKİLLENDİRME SANAYİ VE TİCARET LİMİTED ŞİRKETİ  2586339.60  2374142.90       212196.70         TL
+
+==================================================
+Inspecting: Ziraat kasım Hesap_Hareketleri_2122025 (1).xlsx
+==================================================
+ERROR reading Ziraat kasım Hesap_Hareketleri_2122025 (1).xlsx: expected <class 'openpyxl.styles.fills.Fill'>
+
+==================================================
+Inspecting: Akbank HesapHareketleri_16.12.2025_0061615.xlsx
+==================================================
+Columns: ['Vadesiz Hesap Hareketleriniz', 'Unnamed: 1']
+
+First 3 rows:
+  Vadesiz Hesap Hareketleriniz                          Unnamed: 1
+0               Ad Soyad/Ünvan  AKKA DMR.ÇELİK SAN.VE TİC.LTD.ŞTİ.
+1                         Şube                        ERTUĞRULKENT
+2                     Hesap No                        1179-0061615
+
+==================================================
+Inspecting: Genel alış stok hareket föyü.xlsx
+==================================================
+Columns: ['STOK KODU', 'STOK İSMİ', 'TARİH', 'SERİ', 'SIRA NO', 'EVRAK TİPİ', 'GİREN MİKTAR', 'ÇIKAN MİKTAR', 'MİKTAR', 'BİRİM ADI', 'NET BİRİM FİYATI', 'NET TUTAR', 'FATURA SERİ', 'FATURA SIRA NO', 'CARİ CİNSİ', 'CARİ KODU', 'CARİ İSMİ', 'GRUP İSMİ', 'GİREN MALİYET DEĞER']
+
+First 3 rows:
+      STOK KODU                         STOK İSMİ      TARİH     SERİ  SIRA NO      EVRAK TİPİ  GİREN MİKTAR  ÇIKAN MİKTAR  MİKTAR BİRİM ADI  NET BİRİM FİYATI  NET TUTAR FATURA SERİ  FATURA SIRA NO  CARİ CİNSİ   CARİ KODU                                                                               CARİ İSMİ GRUP İSMİ  GİREN MALİYET DEĞER
+0  150.KÖR.0017             SYH SAC 8.0*1500*3000 2025-01-02  KR42025       34  Giriş faturası          1150             0    1150  KİLOGRAM            24.052   27659.80     KR42025              34  Cari hesap  320.K.0005                              KÖRÜSTAN BURSA SAC - PRES SANAYİ VE TİCARET ANONİM ŞİRKETİ    SATICI             27659.80
+1  150.KÖR.0018            DKP SAC 1.00*1500*3000 2025-01-02  KR42025       34  Giriş faturası           142             0     142  KİLOGRAM            29.842    4237.56     KR42025              34  Cari hesap  320.K.0005                              KÖRÜSTAN BURSA SAC - PRES SANAYİ VE TİCARET ANONİM ŞİRKETİ    SATICI              4237.56
+2   150.BL.0014  Koltuk kolçak bağlantı sacı 8 mm 2025-01-03  BRZ2025        6  Giriş faturası           285             0     285      ADET            33.000    9405.00     BRZ2025               6  Cari hesap  120.B.0003  BURSA LAZER SAC İŞLEME ISI VE ENERJİ İTHALAT İHRACAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ   MÜŞTERİ              9405.00
+
+==================================================
+Inspecting: Ziraat Hesap_Hareketleri_16122025.xlsx
+==================================================
+Columns: ['Unnamed: 0']
+
+First 3 rows:
+  Unnamed: 0
+0        NaN
+1        NaN
+2        NaN
+
+==================================================
+Inspecting: Genel  satış stok hareket föyü.xlsx
+==================================================
+Columns: ['STOK KODU', 'STOK İSMİ', 'TARİH', 'SERİ', 'SIRA NO', 'EVRAK TİPİ', 'GİREN MİKTAR', 'ÇIKAN MİKTAR', 'MİKTAR', 'BİRİM ADI', 'NET BİRİM FİYATI', 'NET TUTAR', 'FATURA SERİ', 'FATURA SIRA NO', 'CARİ CİNSİ', 'CARİ KODU', 'CARİ İSMİ', 'GRUP İSMİ', 'GİREN MALİYET DEĞER']
+
+First 3 rows:
+      STOK KODU                      STOK İSMİ      TARİH   SERİ  SIRA NO        EVRAK TİPİ  GİREN MİKTAR  ÇIKAN MİKTAR  MİKTAR BİRİM ADI  NET BİRİM FİYATI  NET TUTAR FATURA SERİ  FATURA SIRA NO  CARİ CİNSİ   CARİ KODU                                                                 CARİ İSMİ GRUP İSMİ  GİREN MALİYET DEĞER
+0  152.FKT.0064  162906 Şase yan sacı sol KYN. 2025-01-02  E2024      812  Çıkış irsaliyesi             0           100    -100      ADET            333.80      33380       E2025               3  Cari hesap  120.F.0001  FKT KOLTUK SİSTEMLERİ ÜRETİM VE DAĞITIM SANAYİ VE TİCARET ANONİM ŞİRKETİ   MÜŞTERİ                    0
+1  152.FKT.0065  162907 Şase yan sacı sağ KYN. 2025-01-02  E2024      812  Çıkış irsaliyesi             0           100    -100      ADET            333.80      33380       E2025               3  Cari hesap  120.F.0001  FKT KOLTUK SİSTEMLERİ ÜRETİM VE DAĞITIM SANAYİ VE TİCARET ANONİM ŞİRKETİ   MÜŞTERİ                    0
+2  152.FKT.0066  162908 Şase yan sacı sol KYN. 2025-01-02  E2024      812  Çıkış irsaliyesi             0           100    -100      ADET            358.46      35846       E2025               3  Cari hesap  120.F.0001  FKT KOLTUK SİSTEMLERİ ÜRETİM VE DAĞITIM SANAYİ VE TİCARET ANONİM ŞİRKETİ   MÜŞTERİ                    0
+
+==================================================
+Inspecting: Aylık ciro alış raporu.xls
+==================================================
+Columns: ['Cari hesap kodu', 'Cari hesap adı', 'Döviz', 'Ciro', 'Ocak      - 2025', 'Şubat     - 2025', 'Mart      - 2025', 'Nisan     - 2025', 'Mayıs     - 2025', 'Haziran   - 2025', 'Temmuz    - 2025', 'Ağustos   - 2025', 'Eylül     - 2025', 'Ekim      - 2025', 'Kasım     - 2025', 'Aralık    - 2025', '2025 maliyılı sonrası']
+
+First 3 rows:
+  Cari hesap kodu                                                                            Cari hesap adı Döviz      Ciro  Ocak      - 2025  Şubat     - 2025  Mart      - 2025  Nisan     - 2025  Mayıs     - 2025  Haziran   - 2025  Temmuz    - 2025  Ağustos   - 2025  Eylül     - 2025  Ekim      - 2025  Kasım     - 2025  Aralık    - 2025  2025 maliyılı sonrası
+0      320.A.0001                                           AVANSAS OFİS MALZEMELERİ TİCARET ANONİM ŞİRKETİ    TL   5667.58           5667.58               0.0               0.0               0.0               0.0               0.0                 0               0.0               0.0               0.0               0.0               0.0                      0
+1      320.A.0002                                                                    AYDIN USTA ÖZEL SERVİS    TL  40833.34          22083.34               0.0               0.0               0.0               0.0               0.0                 0               0.0           18750.0               0.0               0.0               0.0                      0
+2      320.A.0003  ATLAS BAĞLANTI ELEMANLARI TEKNİK HIRDAVAT MAKİNA METAL SANAYİ VE TİCARET LİMİTED ŞİRKETİ    TL      0.00              0.00               0.0               0.0               0.0               0.0               0.0                 0               0.0               0.0               0.0               0.0               0.0                      0
+
+==================================================
+Inspecting: Kuveyt kasım Hesap Hareketleri (6).xls
+==================================================
+ERROR reading Kuveyt kasım Hesap Hareketleri (6).xls: Unsupported format, or corrupt file: Expected BOF record; found b'\xef\xbb\xbf<tabl'
+
+==================================================
+Inspecting: Aylık cari satış raporu.xls
+==================================================
+Columns: ['Cari hesap kodu', 'Cari hesap adı', 'Döviz', 'Ciro', 'Ocak      - 2025', 'Şubat     - 2025', 'Mart      - 2025', 'Nisan     - 2025', 'Mayıs     - 2025', 'Haziran   - 2025', 'Temmuz    - 2025', 'Ağustos   - 2025', 'Eylül     - 2025', 'Ekim      - 2025', 'Kasım     - 2025', 'Aralık    - 2025', '2025 maliyılı sonrası']
+
+First 3 rows:
+  Cari hesap kodu                                                Cari hesap adı Döviz   Ciro  Ocak      - 2025  Şubat     - 2025  Mart      - 2025  Nisan     - 2025  Mayıs     - 2025  Haziran   - 2025  Temmuz    - 2025  Ağustos   - 2025  Eylül     - 2025  Ekim      - 2025  Kasım     - 2025  Aralık    - 2025  2025 maliyılı sonrası
+0      120.A.0001                AVG OTOMOTİV SANAYİ VE TİCARET LİMİTED ŞİRKETİ    TL    0.0                 0               0.0                 0                 0               0.0               0.0               0.0               0.0               0.0               0.0               0.0               0.0                      0
+1      120.A.0002  AKSANTAŞ TİCARİ ARAÇ METAL SANAYİ VE TİCARET LİMİTED ŞİRKETİ    TL    0.0                 0               0.0                 0                 0               0.0               0.0               0.0               0.0               0.0               0.0               0.0               0.0                      0
+2      120.A.0003                 ALİŞ MAKİNA SANAYİ VE TİCARET LİMİTED ŞİRKETİ    TL  180.8                 0               0.0                 0                 0               0.0             180.8               0.0               0.0               0.0               0.0               0.0               0.0                      0
