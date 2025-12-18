@@ -9,10 +9,10 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { ProductionBOM, Product, BOMItem, Material } from "@prisma/client";
+import { BillOfMaterial, Product, BOMItem, Material } from "@prisma/client";
 import { useLanguage } from "@/context/LanguageContext";
 
-interface BOMWithRelations extends ProductionBOM {
+interface BOMWithRelations extends BillOfMaterial {
     product: Product;
     items: (BOMItem & { material: Material })[];
 }
