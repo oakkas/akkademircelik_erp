@@ -128,6 +128,23 @@ export function Sidebar() {
               </div>
             </Link>
           ))}
+
+          <form action={async () => {
+            // We need to import handleSignOut dynamically or pass it as a prop if this was a server component,
+            // but since it's a client component, we can import the server action.
+            const { handleSignOut } = await import('@/lib/actions');
+            await handleSignOut();
+          }}>
+            <button
+              type="submit"
+              className="text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition text-zinc-400"
+            >
+              <div className="flex items-center flex-1">
+                <Users className="h-5 w-5 mr-3 text-red-500" />
+                {t("common.logout")}
+              </div>
+            </button>
+          </form>
         </div>
       </div>
     </div>

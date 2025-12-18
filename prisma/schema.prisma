@@ -347,3 +347,13 @@ model JobConsumption {
   material    Material @relation(fields: [materialId], references: [id])
   quantity    Int      // How many sheets used
 }
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("USER") // ADMIN, USER
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
