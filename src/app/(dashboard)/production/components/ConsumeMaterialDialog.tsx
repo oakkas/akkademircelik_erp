@@ -21,7 +21,7 @@ import {
     SelectTrigger,
     SelectValue
 } from "@/components/ui/select";
-import { Stock, Warehouse, ProductionJob, Material } from "@prisma/client";
+import { Stock, Warehouse, ProductionJob, Material, Product } from "@prisma/client";
 import { useLanguage } from "@/context/LanguageContext";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -31,7 +31,7 @@ interface MaterialWithStocks extends Material {
 }
 
 interface ConsumeMaterialDialogProps {
-    job: ProductionJob;
+    job: ProductionJob & { product: Product };
     materials: MaterialWithStocks[];
 }
 
@@ -71,7 +71,7 @@ export function ConsumeMaterialDialog({ job, materials }: ConsumeMaterialDialogP
     const handleLoadFromBOM = async () => {
         const result = await getBOMForProduct(job.productId);
         if (result.success && result.data) {
-            const items = result.data.map((bomItem: any) => {
+            const items = result.data.items.map((bomItem: any) => {
                 const material = materials.find(m => m.id === bomItem.materialId);
                 const totalStock = material?.stocks.reduce((acc, s) => acc + s.quantity, 0) || 0;
                 return {
