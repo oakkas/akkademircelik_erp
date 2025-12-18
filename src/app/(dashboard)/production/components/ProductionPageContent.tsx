@@ -6,16 +6,20 @@ import { ProductList } from "./ProductList";
 import { ProductionJobList } from "./ProductionJobList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from "@/context/LanguageContext";
-import { ProductionJob, Product, Material } from "@prisma/client";
+import { ProductionJob, Product, Material, Stock, Warehouse } from "@prisma/client";
 
 interface ProductionJobWithRelations extends ProductionJob {
     product: Product;
 }
 
+interface MaterialWithStocks extends Material {
+    stocks: (Stock & { warehouse: Warehouse })[];
+}
+
 interface ProductionPageContentProps {
     products: Product[];
     jobs: ProductionJobWithRelations[];
-    materials: Material[];
+    materials: MaterialWithStocks[];
 }
 
 export function ProductionPageContent({ products, jobs, materials }: ProductionPageContentProps) {
