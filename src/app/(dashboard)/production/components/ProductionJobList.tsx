@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Edit, Trash2, Play, CheckCircle, Archive } from "lucide-react";
-import { ProductionJob, Product, Material } from "@prisma/client";
+import { ProductionJob, Product, Material, Stock, Warehouse } from "@prisma/client";
 import { updateJobStatus, deleteJob } from "@/actions/production";
 import { ConsumeMaterialDialog } from "./ConsumeMaterialDialog";
 import { useLanguage } from "@/context/LanguageContext";
@@ -20,9 +20,13 @@ interface ProductionJobWithRelations extends ProductionJob {
   product: Product;
 }
 
+interface MaterialWithStocks extends Material {
+  stocks: (Stock & { warehouse: Warehouse })[];
+}
+
 interface ProductionJobListProps {
   jobs: ProductionJobWithRelations[];
-  materials: Material[];
+  materials: MaterialWithStocks[];
 }
 
 export function ProductionJobList({ jobs, materials }: ProductionJobListProps) {
