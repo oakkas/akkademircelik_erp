@@ -91,10 +91,10 @@ export async function createPurchaseOrder(supplierId: string, items: { materialI
 
             // 2. Update Inventory (Auto-receive for simplicity for now, or we can make this a separate step)
             for (const item of items) {
-                await tx.material.update({
-                    where: { id: item.materialId },
-                    data: { quantity: { increment: Number(item.quantity) } }
-                });
+                // await tx.material.update({
+                //     where: { id: item.materialId },
+                //     data: { quantity: { increment: Number(item.quantity) } }
+                // });
 
                 await tx.stockMovement.create({
                     data: {
