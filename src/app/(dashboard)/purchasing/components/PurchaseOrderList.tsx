@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Order, ThirdParty, OrderItem } from "@prisma/client";
 import { useLanguage } from "@/context/LanguageContext";
+import { formatCurrency } from "@/lib/utils";
 
 interface OrderWithRelations extends Order {
     thirdParty: ThirdParty;
@@ -43,10 +44,10 @@ export function PurchaseOrderList({ orders }: PurchaseOrderListProps) {
                             <TableCell className="font-medium">{order.id.slice(-6)}</TableCell>
                             <TableCell>{order.thirdParty?.name || "Unknown"}</TableCell>
                             <TableCell>{order.items.length} {t("common.items")}</TableCell>
-                            <TableCell>${order.totalAmount.toFixed(2)}</TableCell>
+                            <TableCell>{formatCurrency(order.totalAmount)}</TableCell>
                             <TableCell>
                                 <Badge variant={order.status === "COMPLETED" ? "default" : "secondary"}>
-                                    {order.status}
+                                    {t(`status.${order.status}`)}
                                 </Badge>
                             </TableCell>
                             <TableCell>{new Date(order.createdAt).toLocaleDateString()}</TableCell>

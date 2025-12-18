@@ -59,15 +59,27 @@ export async function getDashboardStats() {
         },
     });
 
-    // 4. Pending Purchases (Count)
-    const pendingPurchasesCount = await prisma.order.count({
+    // 4. Pending Purchases (Count and Amount)
+    const pendingPurchases = await prisma.order.aggregate({
+        _count: {
+            id: true,
+        },
+        _sum: {
+            totalAmount: true,
+        },
         where: {
             type: 'PURCHASE',
             status: 'PENDING',
         },
     });
 
-    const lastMonthPendingPurchases = await prisma.order.count({
+    const lastMonthPendingPurchases = await prisma.order.aggregate({
+        _count: {
+            id: true,
+        },
+        _sum: {
+            totalAmount: true,
+        },
         where: {
             type: 'PURCHASE',
             status: 'PENDING',
@@ -76,7 +88,7 @@ export async function getDashboardStats() {
                 lte: lastDayOfLastMonth
             }
         }
-    })
+    });
 
     return {
         inventory: {
@@ -92,8 +104,10 @@ export async function getDashboardStats() {
             trend: (monthlySales._sum.totalAmount || 0) - (lastMonthSales._sum.totalAmount || 0)
         },
         purchasing: {
-            count: pendingPurchasesCount,
-            trend: pendingPurchasesCount - lastMonthPendingPurchases
+            count: pendingPurchases._count.id || 0,
+            total: pendingPurchases._sum.totalAmount || 0,
+            trendCount: (pendingPurchases._count.id || 0) - (lastMonthPendingPurchases._count.id || 0),
+            trendTotal: (pendingPurchases._sum.totalAmount || 0) - (lastMonthPendingPurchases._sum.totalAmount || 0)
         }
     };
 }

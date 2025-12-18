@@ -21,9 +21,16 @@ async function main() {
     await prisma.$connect();
     console.log("Connected.");
 
-    // Count invoices
-    const count = await prisma.invoice.count();
-    console.log("Invoice count:", count);
+    // Count entities
+    const invoiceCount = await prisma.invoice.count();
+    const stockCount = await prisma.stock.count();
+    const productCount = await prisma.product.count();
+    const orderCount = await prisma.order.count();
+
+    console.log("Invoice count:", invoiceCount);
+    console.log("Stock count:", stockCount);
+    console.log("Product count:", productCount);
+    console.log("Order count:", orderCount);
 }
 
 main()

@@ -14,6 +14,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
 import { generateOrderPDF } from "@/lib/pdf-generator";
+import { formatCurrency } from "@/lib/utils";
 
 interface OrderWithRelations extends Order {
     thirdParty: ThirdParty;
@@ -47,7 +48,7 @@ export function SalesOrderList({ orders }: SalesOrderListProps) {
                             <TableCell className="font-medium">{order.id.slice(-6)}</TableCell>
                             <TableCell>{order.thirdParty?.name || "Unknown"}</TableCell>
                             <TableCell>{order.items.length} {t("common.items")}</TableCell>
-                            <TableCell>${order.totalAmount.toFixed(2)}</TableCell>
+                            <TableCell>{formatCurrency(order.totalAmount)}</TableCell>
                             <TableCell>
                                 <Badge variant={order.status === "COMPLETED" ? "default" : "secondary"}>
                                     {t(`status.${order.status}`)}

@@ -9,6 +9,9 @@ export default async function FinancePage() {
     const totalRevenue = invoices?.filter((i: any) => i.type === 'SALES' && i.status === 'PAID')
         .reduce((sum: number, i: any) => sum + i.totalAmount, 0) || 0;
 
+    const totalExpenses = invoices?.filter((i: any) => i.type === 'EXPENSE' && i.status === 'PAID')
+        .reduce((sum: number, i: any) => sum + i.totalAmount, 0) || 0;
+
     const pendingInvoices = invoices?.filter((i: any) => i.status !== 'PAID' && i.status !== 'CANCELLED').length || 0;
 
     const overdueAmount = invoices?.filter((i: any) => {
@@ -25,6 +28,7 @@ export default async function FinancePage() {
 
             <FinancePageContent
                 totalRevenue={totalRevenue}
+                totalExpenses={totalExpenses}
                 pendingInvoices={pendingInvoices}
                 overdueAmount={overdueAmount}
             />

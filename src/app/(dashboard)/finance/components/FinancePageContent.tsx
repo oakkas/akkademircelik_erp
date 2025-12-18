@@ -1,18 +1,20 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { DollarSign, FileText, TrendingUp, AlertCircle } from "lucide-react";
+import { DollarSign, FileText, TrendingUp, AlertCircle, CreditCard } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
+import { formatCurrency } from "@/lib/utils";
 
 interface FinancePageContentProps {
     totalRevenue: number;
+    totalExpenses: number;
     pendingInvoices: number;
     overdueAmount: number;
 }
 
-export function FinancePageContent({ totalRevenue, pendingInvoices, overdueAmount }: FinancePageContentProps) {
+export function FinancePageContent({ totalRevenue, totalExpenses, pendingInvoices, overdueAmount }: FinancePageContentProps) {
     const { t } = useLanguage();
 
     return (
@@ -30,9 +32,21 @@ export function FinancePageContent({ totalRevenue, pendingInvoices, overdueAmoun
                         <DollarSign className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">${totalRevenue.toFixed(2)}</div>
+                        <div className="text-2xl font-bold">{formatCurrency(totalRevenue)}</div>
                         <p className="text-xs text-muted-foreground">
                             {t("finance.collectedFromSales") || "Collected from paid sales invoices"}
+                        </p>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                        <CardTitle className="text-sm font-medium">{t("finance.totalExpenses") || "Total Expenses"}</CardTitle>
+                        <CreditCard className="h-4 w-4 text-muted-foreground" />
+                    </CardHeader>
+                    <CardContent>
+                        <div className="text-2xl font-bold">{formatCurrency(totalExpenses)}</div>
+                        <p className="text-xs text-muted-foreground">
+                            {t("finance.paidExpenses") || "Total paid expenses"}
                         </p>
                     </CardContent>
                 </Card>
@@ -54,7 +68,7 @@ export function FinancePageContent({ totalRevenue, pendingInvoices, overdueAmoun
                         <AlertCircle className="h-4 w-4 text-red-500" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold text-red-500">${overdueAmount.toFixed(2)}</div>
+                        <div className="text-2xl font-bold text-red-500">{formatCurrency(overdueAmount)}</div>
                         <p className="text-xs text-muted-foreground">
                             {t("finance.totalUnpaid") || "Total unpaid past due date"}
                         </p>

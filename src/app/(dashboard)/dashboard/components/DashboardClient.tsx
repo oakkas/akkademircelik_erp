@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Package, Factory, ShoppingCart, Truck } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { formatCurrency } from "@/lib/utils";
 
 interface DashboardStats {
     inventory: {
@@ -19,16 +20,16 @@ interface DashboardStats {
     };
     purchasing: {
         count: number;
-        trend: number;
+        total: number;
+        trendCount: number;
+        trendTotal: number;
     };
 }
 
 export function DashboardClient({ stats }: { stats: DashboardStats }) {
     const { t } = useLanguage();
 
-    const formatCurrency = (value: number) => {
-        return new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(value);
-    };
+    // formatCurrency removed from here, imported from utils
 
     const formatTrend = (value: number) => {
         return value > 0 ? `+${value}` : `${value}`;
@@ -87,9 +88,9 @@ export function DashboardClient({ stats }: { stats: DashboardStats }) {
                         <Truck className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">{stats.purchasing.count}</div>
+                        <div className="text-2xl font-bold">{formatCurrency(stats.purchasing.total)}</div>
                         <p className="text-xs text-muted-foreground">
-                            {formatTrend(stats.purchasing.trend)} {t("dashboard.fromLastMonth")}
+                            {formatCurrency(stats.purchasing.trendTotal)} {t("dashboard.fromLastMonth")}
                         </p>
                     </CardContent>
                 </Card>
