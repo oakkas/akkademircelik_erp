@@ -260,11 +260,13 @@ export async function getLowStockItems() {
         take: 10
     })
 
-    return lowStock.map(item => ({
-        name: item.product.name,
-        quantity: item.quantity,
-        price: item.product.price
-    }))
+    return lowStock
+        .filter(item => item.product)
+        .map(item => ({
+            name: item.product!.name,
+            quantity: item.quantity,
+            price: item.product!.price
+        }))
 }
 
 export async function getStockMovements() {
