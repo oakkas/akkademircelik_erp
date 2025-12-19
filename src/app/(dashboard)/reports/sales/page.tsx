@@ -47,7 +47,7 @@ export default function SalesReportsPage() {
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis type="number" tickFormatter={(value) => `₺${value / 1000}k`} />
                                 <YAxis dataKey="name" type="category" width={150} tick={{ fontSize: 12 }} />
-                                <Tooltip formatter={(value: number) => formatCurrency(value)} />
+                                <Tooltip formatter={(value: any) => formatCurrency(value)} />
                                 <Legend />
                                 <Bar dataKey="total" name="Toplam Satış" fill="#3b82f6" radius={[0, 4, 4, 0]} />
                             </BarChart>
@@ -85,7 +85,7 @@ export default function SalesReportsPage() {
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis dataKey="name" />
                                 <YAxis tickFormatter={(value) => `₺${value / 1000}k`} />
-                                <Tooltip formatter={(value: number) => formatCurrency(value)} />
+                                <Tooltip formatter={(value: any) => formatCurrency(value)} />
                                 <Legend />
                                 <Line type="monotone" dataKey="total" name="Aylık Satış" stroke="#10b981" strokeWidth={2} activeDot={{ r: 8 }} />
                             </LineChart>
