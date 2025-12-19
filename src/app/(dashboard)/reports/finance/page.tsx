@@ -79,7 +79,7 @@ export default function FinancialReportsPage() {
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis dataKey="name" />
                                 <YAxis tickFormatter={(value) => `₺${value / 1000}k`} />
-                                <Tooltip formatter={(value: number) => formatCurrency(value)} />
+                                <Tooltip formatter={(value: number | undefined) => formatCurrency(value || 0)} />
                                 <Legend />
                                 <Bar dataKey="income" name="Gelir" fill="#10b981" />
                                 <Bar dataKey="expense" name="Gider" fill="#ef4444" />
@@ -110,7 +110,7 @@ export default function FinancialReportsPage() {
                                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                     ))}
                                 </Pie>
-                                <Tooltip formatter={(value: number) => formatCurrency(value)} />
+                                <Tooltip formatter={(value: number | undefined) => formatCurrency(value || 0)} />
                                 <Legend />
                             </PieChart>
                         </ResponsiveContainer>
