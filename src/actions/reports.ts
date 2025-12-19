@@ -227,6 +227,7 @@ export async function getStockValuation() {
     const valuationByProduct: { name: string, value: number }[] = []
 
     stocks.forEach(stock => {
+        if (!stock.product) return
         const value = stock.quantity * (stock.product.price || 0)
         totalValuation += value
         valuationByProduct.push({
