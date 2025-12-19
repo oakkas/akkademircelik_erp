@@ -55,6 +55,24 @@ export default function SettingsPage() {
                         </div>
                     </CardContent>
                 </Card>
+
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{t("settings.userManagement")}</CardTitle>
+                        <CardDescription>{t("settings.userManagementDesc")}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <div className="flex items-center justify-between rounded-lg border p-4">
+                            <div className="space-y-0.5">
+                                <Label className="text-base">{t("settings.manageUsers")}</Label>
+                                <p className="text-sm text-muted-foreground">{t("settings.userManagementDesc")}</p>
+                            </div>
+                            <Button variant="outline" asChild>
+                                <a href="/settings/users">{t("common.view")}</a>
+                            </Button>
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );
