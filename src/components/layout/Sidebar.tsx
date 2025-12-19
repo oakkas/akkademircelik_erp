@@ -98,6 +98,12 @@ export function Sidebar() {
       color: "text-green-600",
     },
     {
+      label: t("common.reports"),
+      icon: FileText, // Using FileText as a placeholder for Reports icon
+      href: "/reports",
+      color: "text-blue-500",
+    },
+    {
       label: t("common.settings"),
       icon: Settings,
       href: "/settings",
